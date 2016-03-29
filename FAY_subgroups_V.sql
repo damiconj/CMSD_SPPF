@@ -52,56 +52,56 @@ FROM (SELECT
 		STUDENT_ID,
 		"SPED2008" = 
 		CASE
-			WHEN (	disability_start_date<='10.1.2007' AND 
-					disability_end_date>'10.1.2007') THEN 1
+			WHEN (	disability_start_date<='10.1.2007' AND (
+					disability_end_date>'10.1.2007' OR disability_end_date IS NULL)) THEN 1
 			ELSE NULL
 		END,
 		"SPED2009" = 
 		CASE
-			WHEN (	disability_start_date<='10.1.2008' AND 
-					disability_end_date>'10.1.2008') THEN 1
+			WHEN (	disability_start_date<='10.1.2008' AND (
+					disability_end_date>'10.1.2008' OR disability_end_date IS NULL)) THEN 1
 			ELSE NULL
 		END,
 		"SPED2010" = 
 		CASE
-			WHEN (	disability_start_date<='10.1.2009' AND 
-					disability_end_date>'10.1.2009') THEN 1
+			WHEN (	disability_start_date<='10.1.2009' AND (
+					disability_end_date>'10.1.2009' OR disability_end_date IS NULL)) THEN 1
 			ELSE NULL
 		END,
 		"SPED2011" = 
 		CASE
-			WHEN (	disability_start_date<='10.15.2010' AND 
-					disability_end_date>'10.15.2010') THEN 1
+			WHEN (	disability_start_date<='10.15.2010' AND (
+					disability_end_date>'10.15.2010' OR disability_end_date IS NULL)) THEN 1
 			ELSE NULL
 		END,
 		"SPED2012" = 
 		CASE
-			WHEN (	disability_start_date<='10.15.2011' AND 
-					disability_end_date>'10.15.2011') THEN 1
+			WHEN (	disability_start_date<='10.15.2011' AND (
+					disability_end_date>'10.15.2011' OR disability_end_date IS NULL)) THEN 1
 			ELSE NULL
 		END,
 		"SPED2013" = 
 		CASE
-			WHEN (	disability_start_date<='10.15.2012' AND 
-					disability_end_date>'10.15.2012') THEN 1
+			WHEN (	disability_start_date<='10.15.2012' AND (
+					disability_end_date>'10.15.2012' OR disability_end_date IS NULL)) THEN 1
 			ELSE NULL
 		END,
 		"SPED2014" = 
 		CASE
-			WHEN (	disability_start_date<='10.15.2013' AND 
-					disability_end_date>'10.15.2013') THEN 1
+			WHEN (	disability_start_date<='10.15.2013' AND (
+					disability_end_date>'10.15.2013' OR disability_end_date IS NULL)) THEN 1
 			ELSE NULL
 		END,
 		"SPED2015" = 
 		CASE
-			WHEN (	disability_start_date<='10.15.2014' AND 
-					disability_end_date>'10.15.2014') THEN 1
+			WHEN (	disability_start_date<='10.15.2014' AND (
+					disability_end_date>'10.15.2014' OR disability_end_date IS NULL)) THEN 1
 			ELSE NULL
 		END,
 		"SPED2016" = 
 		CASE
-			WHEN (	disability_start_date<='10.15.2015' AND 
-					disability_end_date>'10.15.2015') THEN 1
+			WHEN (	disability_start_date<='10.15.2015' AND (
+					disability_end_date>'10.15.2015' OR disability_end_date IS NULL)) THEN 1
 			ELSE NULL
 		END
 FROM SPPF..SPECIAL_EDUCATION	AS SPED	) p
