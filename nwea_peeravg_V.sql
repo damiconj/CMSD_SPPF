@@ -52,7 +52,7 @@ WITH	ENROLL_OCT AS
 				,'HS'							AS	'PEER_TYPE'
 		FROM SPPF..NWEA_SCORE
 		INNER JOIN ENROLL_OCT ON ENROLL_OCT.STUDENT_ID = NWEA_SCORE.student_id 
-		AND ENROLL_OCT.school_year = (NWEA_SCORE.school_year-1)
+		AND ENROLL_OCT.school_year = NWEA_SCORE.school_year
 		WHERE enroll_oct.GRADE IN ('09') 
 		AND TERM = 'Fall'
 		AND ENROLL_OCT.BUILDING_TYPE IN ('H', 'EH')
@@ -81,7 +81,8 @@ SELECT	NWEA_HS.SCHOOL_CODE
 	   Change Log:
 	   Date		    Who				   What
 	   *************   **********************  ****************
-	   03-Feb-2016	    Damico, Nicholas J	   Initial creation		
+	   03-Feb-2016	    Damico, Nicholas J	   Initial creation	
+	   19-Feb-2016		Damico, Nicholas J	   Change on line 55	
 */
 FROM NWEA_HS
 ORDER BY SCHOOL_CODE
