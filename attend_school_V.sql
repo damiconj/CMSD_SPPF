@@ -35,8 +35,12 @@ SELECT		FAY_ATT.BUILDING_ID
 												AS	ATTENDANCE_RATE
 			,SUM(cast(FAY_ATT.chronic AS float))/COUNT(cast(FAY_ATT.STUDENT_ID as float)) * 100
 												AS	CHRONIC_PERCENT
+			,SUM(cast(FAY_ATT.chronic AS float))
+												AS	CHRONIC_N
 			,100-(SUM(cast(FAY_ATT.chronic AS float))/COUNT(cast(FAY_ATT.STUDENT_ID as float))) * 100
 												AS	CHRONICNOT_PERCENT
+			,COUNT(cast(FAY_ATT.STUDENT_ID as float))-SUM(cast(FAY_ATT.chronic AS float))
+												AS	CHRONICNOT_N
 			,(SUM(cast(FAY_ATT.TenDaysorLess AS float))/COUNT(cast(FAY_ATT.STUDENT_ID as float))) * 100
 												AS	TenDaysorLess_PERCENT
 /*
@@ -44,12 +48,13 @@ SELECT		FAY_ATT.BUILDING_ID
 	   Author:	Damico, Nicholas J
 	   Purpose:	View the attendance rates and chronic absenteeism rates of schools across multiple years
 	   Change Log:
-	   Date		    Who				   What
+	   Date				Who						What
 	   *************   **********************  ****************
 	   21-Dec-2015	    Damico, Nicholas J	   Initial creation
 	   14-Jan-2016		Damico, Nicholas J	   QA edits
 	   22-Jan-2016		Damico, Nicholas J	   Updated tables selecting FROM
-	   23-Mar-2016		Damico, Nicholas J	   Change query to be by building_id rather than school_code					
+	   23-Mar-2016		Damico, Nicholas J	   Change query to be by building_id rather than school_code
+	   07-Apr-2016		Damico, Nicholas J	   Updates to query to allow for aggregation at school_code level 					
 */
 
 FROM	FAY_ATT
