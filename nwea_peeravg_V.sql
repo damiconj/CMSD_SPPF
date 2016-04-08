@@ -20,7 +20,7 @@ WITH	ENROLL_OCT AS
 		(GR.SCHOOL_YEAR = 2013 AND entry_date<='10.1.2012' AND withdrawal_date>='10.1.2012') OR
 		(GR.SCHOOL_YEAR = 2014 AND entry_date<='10.1.2013' AND withdrawal_date>='10.1.2013') OR
 		(GR.SCHOOL_YEAR = 2015 AND entry_date<='10.1.2014' AND withdrawal_date>='10.1.2014') OR
-		(GR.SCHOOL_YEAR = 2016 AND entry_date<='10.1.2015' AND withdrawal_date>='10.1.2015')
+		(GR.SCHOOL_YEAR = 2016 AND entry_date<='10.1.2015' AND (withdrawal_date>='10.1.2015' OR WITHDRAWAL_DATE IS NULL))
 		)
 		)
 		)
@@ -82,7 +82,8 @@ SELECT	NWEA_HS.SCHOOL_CODE
 	   Date		    Who				   What
 	   *************   **********************  ****************
 	   03-Feb-2016	    Damico, Nicholas J	   Initial creation	
-	   19-Feb-2016		Damico, Nicholas J	   Change on line 55	
+	   19-Feb-2016		Damico, Nicholas J	   Change on line 55
+	   08-Mar-2016		Damico, Nicholas J	   Change to enroll definition on line 23	
 */
 FROM NWEA_HS
 ORDER BY SCHOOL_CODE
