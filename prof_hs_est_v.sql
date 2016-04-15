@@ -61,9 +61,9 @@ WITH nwea_fall as (
 		) as pivot_table
 		)
 		
-SELECT	nwea_fall.school_code
-		,nwea_fall.school_year
-		,nwea_fall.test_subject
+SELECT	nwea_winter.school_code
+		,nwea_winter.school_year
+		,nwea_winter.test_subject
 		,round((nwea_fall.adv_n +nwea_fall.acc_n + nwea_fall.prf_n) / 
 		(nwea_fall.adv_n+nwea_fall.acc_n+nwea_fall.prf_n+nwea_fall.bsc_n+nwea_fall.lmt_n)*100 , 1)
 												AS		prof_fall_perc
@@ -85,10 +85,11 @@ SELECT	nwea_fall.school_code
 	   Date		        Who				       What
 	   *************   **********************  ****************
 	   24-Mar-2016	    Damico, Nicholas J	   Initial creation
+	   15-Apr-2016		Damico, Nicholas J	   Altered join statement and grade bands in where statement	
 	   		
 */
-FROM nwea_fall			
-left join nwea_winter
+FROM nwea_winter			
+left join nwea_fall
 ON nwea_fall.school_code=nwea_winter.school_code 
 AND nwea_fall.school_year=nwea_winter.school_year 
 AND nwea_fall.test_subject=nwea_winter.test_subject

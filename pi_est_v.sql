@@ -72,7 +72,7 @@ SELECT	perf_fall_n.school_code
 												AS		pi_points_est
 
 /*
-	   Name:		pi_est_legacy_v
+	   Name:		pi_est_v
 	   Author:	Damico, Nicholas J
 	   Purpose:	Query that estimates the Performance Index Points for a school, based on linkage between NWEA
 	   data and the legacy state tests (OAA, OGT). PI estimates include READING AND MATH ONLY. Actual PI 
@@ -82,7 +82,7 @@ SELECT	perf_fall_n.school_code
 	   Date		    Who				   What
 	   *************   **********************  ****************
 	   23-Mar-2016	    Damico, Nicholas J	   Initial creation
-	   		
+	   14-Apr-2016		Damico, Nicholas J		Changed the grade levels for the query		
 */
 FROM perf_fall_n
 UNION
